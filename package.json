@@ -7,7 +7,7 @@
     "test-e2e": "NODE_ENV=test protractor test/e2e/conf.js",
     "test-server": "NODE_ENV=test mocha test/server",
     "test": "npm run test-server; npm run test-e2e",
-    "start": "npm start"
+    "start": "gulp"
   },
   "engines": {
     "node": "7.10.0",
