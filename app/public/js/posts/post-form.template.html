@@ -22,7 +22,7 @@
         <span ng-if="$ctrl.isValid('image')" class="help-block">Required Field</span>
       </div>
       <div class="form-group">
-        <button ng-class="$ctrl.isDisabled()" ng-disabled="isDisabled()" type="submit" class="btn btn-primary">
+        <button ng-class="$ctrl.isDisabled()" ng-disabled="$ctrl.isDisabled()" type="submit" class="btn btn-primary">
           {{$ctrl.button}}
       </button>
       </div>

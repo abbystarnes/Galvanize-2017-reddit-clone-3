@@ -1,0 +1,246 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }li img { max-width: 100%; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display === "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;if (failedSpecs.length > 0) { document.getElementById("quickLinksHeader").textContent = "Quicklink of Failure"}for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>App (16 s)</h4><li id="3bbc28a0-6d8e-11e7-8ff7-0188cdb93ed0" class="passed" data-spec="spec0" data-name="toggles the form" data-browser="chrome"><span class="passed">&#10003;</span><a href="15ffd1859042a57b841982350256fc59.png">toggles the form</a>(1 s)</li><li id="3bbc4fb0-6d8e-11e7-8ff7-0188cdb93ed0" class="passed" data-spec="spec1" data-name="disables the button until the form is valid" data-browser="chrome"><span class="passed">&#10003;</span><a href="5b43a175182b6234828d0559b895b102.png">disables the button until the form is valid</a>(2 s)</li><li id="3bbc4fb1-6d8e-11e7-8ff7-0188cdb93ed0" class="passed" data-spec="spec2" data-name="changes the validation class names on blur" data-browser="chrome"><span class="passed">&#10003;</span><a href="b79e5e32e86467e679c314ea24e85bfe.png">changes the validation class names on blur</a>(1 s)</li><li id="3bbc4fb2-6d8e-11e7-8ff7-0188cdb93ed0" class="passed" data-spec="spec3" data-name="creates a post" data-browser="chrome"><span class="passed">&#10003;</span><a href="17714582987f195da25c7027328c87e6.png">creates a post</a>(3 s)</li><li id="3bbc4fb3-6d8e-11e7-8ff7-0188cdb93ed0" class="failed" data-spec="spec4" data-name="allows users to add comments" data-browser="chrome"><span class="failed">&#10007;</span><a href="41511696d3358541e9707fc11976d9fd.png">allows users to add comments</a>(2 s)<ul><li>Failed: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator By(css selector, input) [<a href="javascript:showhide('spec4-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec4-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator By(css selector, input)
+    at selenium_webdriver_1.promise.all.then (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:287:17)
+    at ManagedPromise.invokeCallback_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
+    at ElementArrayFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
+    at ElementFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
+    at PostForm.addComment (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:209:53)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:49:8)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From: Task: Run it(&quot;allows users to add comments&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attemptAsync (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
+    at QueueRunner.run (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
+    at shutdownTask_.MicroTask (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
+    at MicroTask.asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:43:3)
+    at addSpecsToSuite (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
+    at Env.describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
+    at describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="3bbc76c0-6d8e-11e7-8ff7-0188cdb93ed0" class="failed" data-spec="spec5" data-name="clicking on comments only expands a single comments field (not all of them)" data-browser="chrome"><span class="failed">&#10007;</span><a href="4702ff84047232ff44e8315f117b9312.png">clicking on comments only expands a single comments field (not all of them)</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;) [<a href="javascript:showhide('spec5-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec5-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;)
+    at elementArrayFinder.getWebElements.then (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
+    at ManagedPromise.invokeCallback_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
+    at ElementArrayFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
+    at ElementFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
+    at PostForm.fillIn (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:196:23)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:61:8)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From: Task: Run it(&quot;clicking on comments only expands a single comments field (not all of them)&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attemptAsync (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
+    at QueueRunner.run (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
+    at shutdownTask_.MicroTask (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
+    at MicroTask.asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:53:3)
+    at addSpecsToSuite (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
+    at Env.describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
+    at describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="3bbc76c1-6d8e-11e7-8ff7-0188cdb93ed0" class="failed" data-spec="spec6" data-name="allows users to filter" data-browser="chrome"><span class="failed">&#10007;</span><a href="ac45de2a603d49c0482514a4a757a31f.png">allows users to filter</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;) [<a href="javascript:showhide('spec6-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec6-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;)
+    at elementArrayFinder.getWebElements.then (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
+    at ManagedPromise.invokeCallback_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
+    at ElementArrayFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
+    at ElementFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
+    at PostForm.fillIn (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:196:23)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:83:8)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From: Task: Run it(&quot;allows users to filter&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attemptAsync (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
+    at QueueRunner.run (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
+    at shutdownTask_.MicroTask (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
+    at MicroTask.asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:75:3)
+    at addSpecsToSuite (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
+    at Env.describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
+    at describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="3bbc76c2-6d8e-11e7-8ff7-0188cdb93ed0" class="failed" data-spec="spec7" data-name="allows users to sort" data-browser="chrome"><span class="failed">&#10007;</span><a href="3faf4bdd8da885ed576e7089d71c525d.png">allows users to sort</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;) [<a href="javascript:showhide('spec7-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec7-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;)
+    at elementArrayFinder.getWebElements.then (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
+    at ManagedPromise.invokeCallback_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
+    at ElementArrayFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
+    at ElementFinder.(anonymous function).args [as sendKeys] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
+    at PostForm.fillIn (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:196:23)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:104:8)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From: Task: Run it(&quot;allows users to sort&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attemptAsync (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
+    at QueueRunner.run (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
+    at shutdownTask_.MicroTask (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
+    at MicroTask.asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:96:3)
+    at addSpecsToSuite (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
+    at Env.describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
+    at describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="3bbc76c3-6d8e-11e7-8ff7-0188cdb93ed0" class="failed" data-spec="spec8" data-name="allows users to edit" data-browser="chrome"><span class="failed">&#10007;</span><a href="398d6a6d82e8f4bc147c0f24d6d701e5.png">allows users to edit</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;a&quot;, &quot;edit&quot;) [<a href="javascript:showhide('spec8-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec8-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;a&quot;, &quot;edit&quot;)
+    at elementArrayFinder.getWebElements.then (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
+    at ManagedPromise.invokeCallback_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
+    at ElementArrayFinder.(anonymous function).args [as click] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
+    at ElementFinder.(anonymous function).args [as click] (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
+    at PostForm.clickEdit (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:184:21)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:117:8)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From: Task: Run it(&quot;allows users to edit&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attemptAsync (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
+    at QueueRunner.run (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
+    at shutdownTask_.MicroTask (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
+    at MicroTask.asyncRun (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:112:3)
+    at addSpecsToSuite (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
+    at Env.describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
+    at describe (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
+    at Object.&lt;anonymous&gt; (/Users/abbystarnes/Documents/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at /Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/abbystarnes/Documents/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li></ul><a href="javascript:showhide('3bbcc4e0-6d8e-11e7-8ff7-0188cdb93ed0')">Toggle Configuration</a><div class="config" id="3bbcc4e0-6d8e-11e7-8ff7-0188cdb93ed0" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.6.4</li><li>Browser name:  chrome</li><li>Browser version:  59.0.3071.115</li><li>Platform:  Mac OS X</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div></body></html>

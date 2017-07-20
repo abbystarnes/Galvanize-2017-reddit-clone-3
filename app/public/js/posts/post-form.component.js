@@ -23,6 +23,14 @@
         }
       }
 
+      vm.isDisabled = function(){
+        let className
+        if (vm.newPostForm.$invalid) {
+          className = 'disabled'
+        }
+        return className;
+      }
+
 
       vm.isValid = function(inputName) {
         vm.className = '';

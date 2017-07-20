@@ -13,7 +13,7 @@
     controller.$inject = ['$http', 'postService', '$state', '$scope']
     function controller($http, postService, $scope, $state){
       const vm = this;
-      vm.isNewPostFormOpen = true
+      vm.isNewPostFormOpen;
       vm.posts = postService.getPosts();
     }
 
