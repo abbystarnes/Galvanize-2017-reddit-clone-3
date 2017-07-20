@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-8">
+    <form name="$ctrl.newPostForm" novalidate ng-submit="$ctrl.createNewPost()">
+      <div ng-class="$ctrl.isValid('title')">
+        <label for="title">Title</label>
+        <input ng-model='$ctrl.post.title' name="title" id="title" class="form-control" required>
+        <span ng-if="$ctrl.isValid('title')" class="help-block">Required Field</span>
+      </div>
+      <div ng-class="$ctrl.isValid('body')">
+        <label for="body">Body</label>
+        <textarea ng-model='$ctrl.post.body' name="body" id="body" class="form-control" required></textarea>
+        <span ng-if="$ctrl.isValid('body')" class="help-block">Required Field</span>
+      </div>
+      <div ng-class="$ctrl.isValid('author')">
+        <label for="author">Author</label>
+        <input ng-model='$ctrl.post.author' name="author" id="author" class="form-control" required>
+        <span ng-if="$ctrl.isValid('author')" class="help-block">Required Field</span>
+      </div>
+      <div ng-class="$ctrl.isValid('image')">
+        <label for="image-url">Image URL</label>
+        <input ng-model='$ctrl.post.image_url' name="image" id="image-url" class="form-control" required>
+        <span ng-if="$ctrl.isValid('image')" class="help-block">Required Field</span>
+      </div>
+      <div class="form-group">
+        <button ng-class="$ctrl.isDisabled()" ng-disabled="isDisabled()" type="submit" class="btn btn-primary">
+          {{$ctrl.button}}
+      </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- on-submit="$ctrl.updatePost($ctrl.post)" -->

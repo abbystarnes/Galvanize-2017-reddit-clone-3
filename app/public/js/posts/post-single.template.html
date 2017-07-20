@@ -1,0 +1,41 @@
+        <a class="btn btn-primary" ui-sref="editPost({id:$ctrl.post.id, post:$ctrl.post})">Edit</a>
+        <!-- <post-edit></post-edit> -->
+        <div class="media-left">
+          <img ng-src="{{$ctrl.post.image_url}}" class="media-object">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            {{$ctrl.post.title}}
+            <a ng-click="$ctrl.updateVotes($ctrl.post, 'positive')"><i class="glyphicon glyphicon-arrow-up"></i></a>
+            <a ng-click="$ctrl.updateVotes($ctrl.post, 'negative')"><i class="glyphicon glyphicon-arrow-down"></i></a>
+            <span></span>
+            {{$ctrl.post.vote_count}}
+          </h4>
+          <div class="text-right">
+            {{$ctrl.post.author}}
+          </div>
+          <p>
+            {{$ctrl.post.body}}
+          </p>
+          <div>
+            <span am-time-ago="$ctrl.post.created_at"></span>
+
+            <i class="glyphicon glyphicon-comment"></i>
+            <a ng-click="toggleComments($ctrl.post.id)">
+              {{$ctrl.post.comments.length}} {{($ctrl.post.comments.length === 1) ? 'Comment' : 'Comments' }}
+            </a>
+          </div>
+          <!-- ng-if="currentPostIndex === $index" -->
+          <div class="row">
+            <div class="col-md-offset-1">
+              <hr>
+
+            <!-- replace with comments component-->
+            <comments ng-if="$ctrl.currentPostIndex" post='$ctrl.post'></comments>
+              <!-- <div>
+                <p ng-repeat="comment in $ctrl.post.comments">{{comment.content}}</p>
+              </div> -->
+
+            </div>
+          </div>
+        </div>

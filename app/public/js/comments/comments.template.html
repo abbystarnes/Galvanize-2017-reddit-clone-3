@@ -1,0 +1,11 @@
+<div ng-init="init($ctrl.post.id)">
+  <p ng-repeat="comment in $ctrl.comments[$ctrl.post.id]">{{comment}}</p>
+  <form name="$ctrl.newCommentForm" novalidate ng-submit="$ctrl.updateComments($ctrl.post.id, $ctrl.comment)" class="form-inline">
+    <div class="form-group">
+      <input ng-model='$ctrl.comment' name="comment" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </form>
+</div>
