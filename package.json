@@ -9,6 +9,10 @@
     "test": "npm run test-server; npm run test-e2e",
     "start": "npm start"
   },
+  "engines": {
+    "node": "7.10.0",
+    "npm": "4.2.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
