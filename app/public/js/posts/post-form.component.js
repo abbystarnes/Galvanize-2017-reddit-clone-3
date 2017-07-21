@@ -6,7 +6,8 @@
       controller: controller,
       templateUrl: '../js/posts/post-form.template.html',
       bindings: {
-        post: '<'
+        post: '<',
+        open: '=',
       },
     })
 
@@ -16,6 +17,7 @@
       vm.button ='Create Post';
 
       vm.$onInit = function(){
+        console.log(vm.open, 'here');
         if(vm.post){
           if (vm.post.id){
             vm.button = 'Update Post';
@@ -50,6 +52,7 @@
         }
         delete vm.post;
         vm.newPostForm.$setUntouched();
+        vm.open = false;
     }
   }
 }());

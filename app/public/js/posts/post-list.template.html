@@ -1,6 +1,7 @@
 
   <div class="pull-right">
-    <p><a ng-click="$ctrl.isNewPostFormOpen = !$ctrl.isNewPostFormOpen" class="btn btn-info">New Post</a></p>
+    <!-- here -->
+    <p><a ng-click="$ctrl.toggleForm()" class="btn btn-info">New Post</a></p>
   </div>
 
   <ul class="nav nav-pills">
@@ -16,9 +17,8 @@
       </ul>
     </li>
   </ul>
-
-  <post-form ng-if='$ctrl.isNewPostFormOpen' post="post"></post-form>
-
+<!-- here -->
+  <post-form open='$ctrl.formOpen' ng-if='$ctrl.formOpen' post="post"></post-form>
   <div class="row">
     <div class="col-md-12">
       <div class="well">
