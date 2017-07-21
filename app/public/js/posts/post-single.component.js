@@ -21,13 +21,22 @@
         postService.updateVotes(post, direction);
       }
 
-
+// if post index is the clicked index, toggle it
+// else, close the post
+      vm.currentPostIndex = undefined;
+// if click index matches post index, then toggle it, close the rest
       vm.toggleComments = function(itemPos) {
+        console.log('clicked');
+        console.log(itemPos, 'index');
          if (vm.currentPostIndex === itemPos) {
              vm.currentPostIndex = undefined;
+            //  console.log(vm.currentPostIndex);
+            //  console.log(itemPos);
          }
          else {
              vm.currentPostIndex = itemPos;
+            //  console.log(vm.currentPostIndex);
+            //  console.log(itemPos);
          }
       }
 

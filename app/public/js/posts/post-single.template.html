@@ -31,7 +31,7 @@
               <hr>
 
             <!-- replace with comments component-->
-            <comments ng-if="$ctrl.currentPostIndex" post='$ctrl.post'></comments>
+            <comments ng-if="$ctrl.currentPostIndex === $ctrl.post.id" post='$ctrl.post'></comments>
               <!-- <div>
                 <p ng-repeat="comment in $ctrl.post.comments">{{comment.content}}</p>
               </div> -->
