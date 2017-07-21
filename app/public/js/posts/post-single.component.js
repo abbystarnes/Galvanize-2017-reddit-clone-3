@@ -21,14 +21,26 @@
         postService.updateVotes(post, direction);
       }
 
-      // vm.toggleComments = function(itemPos) {
-      //    if (vm.currentPostIndex === itemPos) {
-      //        vm.currentPostIndex = undefined;
+
+      vm.toggleComments = function(itemPos) {
+         if (vm.currentPostIndex === itemPos) {
+             vm.currentPostIndex = undefined;
+         }
+         else {
+             vm.currentPostIndex = itemPos;
+         }
+      }
+
+      // $scope.toggleComments = function(itemPos) {
+      //    if ($scope.currentPostIndex === itemPos) {
+      //        $scope.currentPostIndex = undefined;
       //    }
       //    else {
-      //        vm.currentPostIndex = itemPos;
+      //        $scope.currentPostIndex = itemPos;
       //    }
       // }
+  // <a ng-click="toggleComments($index)">
+      // ng-if="currentPostIndex === $index"
 
       vm.isOpen = function(post) {
         let index = vm.posts.indexOf(post);

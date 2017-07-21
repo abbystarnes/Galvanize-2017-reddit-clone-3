@@ -21,7 +21,7 @@
             <span am-time-ago="$ctrl.post.created_at"></span>
 
             <i class="glyphicon glyphicon-comment"></i>
-            <a ng-click="toggleComments($ctrl.post.id)">
+            <a ng-click="$ctrl.toggleComments($ctrl.post.id)">
               {{$ctrl.post.comments.length}} {{($ctrl.post.comments.length === 1) ? 'Comment' : 'Comments' }}
             </a>
           </div>
