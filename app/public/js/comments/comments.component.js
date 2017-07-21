@@ -25,6 +25,8 @@
       vm.updateComments = function(id, newComment){
         commentService.addComment(id, newComment);
         commentService.getComments(id);
+        vm.newCommentForm.$setUntouched();
+        delete vm.comment;
       }
 
     }

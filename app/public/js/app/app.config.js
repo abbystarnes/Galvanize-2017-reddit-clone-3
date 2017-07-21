@@ -28,14 +28,10 @@
         url: '/post/:id/edit',
         component: 'postEdit',
         params: {
-          post: 'defaultValue',  
+          post: 'defaultValue',
         },
       })
-      // .state({
-      //   name: 'postForm',
-      //   parent: 'posts',
-      //   component: 'postForm',
-      // })
+
 
 }
 
